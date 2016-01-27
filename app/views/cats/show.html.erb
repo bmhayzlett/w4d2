@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <h1><%= @cat.name %></h1>
+
+  <body>
+
+    <table>
+      <tr>
+        <td>Name:</td>
+        <td><%= @cat.name %></td>
+      </tr>
+      <tr>
+        <td>Birthday:</td>
+        <td><%= @cat.birth_date %></td>
+      </tr>
+      <tr>
+        <td>Sex:</td>
+        <td><%= @cat.sex %></td>
+      </tr>
+      <tr>
+        <td>Color:</td>
+        <td><%= @cat.color %></td>
+      </tr>
+    </table>
+
+    <h4>About Me:</h4>
+    <%= @cat.description %>
+
+  </body>
+
+</html>
