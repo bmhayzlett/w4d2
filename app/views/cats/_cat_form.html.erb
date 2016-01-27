@@ -1,0 +1,28 @@
+<form action="<%=url%>" method="post" >
+  <input type="hidden" name="_method" value="<%= post_method %>">
+
+  <p>Name:</p>
+  <p><input type="text" name="cat[name]" value="<%=@cat.name%>"/></p>
+
+  <p>Cat's gender</p>
+  <p><input type="radio" <%= checked = 'checked' if @cat.sex == "M"%> name="cat[sex]" value="M"/>Male</p>
+  <p><input type="radio" <%= checked = 'checked' if @cat.sex == "F"%> name="cat[sex]" value="F"/>Female</p>
+
+  <p>Cat's color</p>
+  <select name="cat[color]">
+    <option <%= selected = 'selected' if @cat.color == ''%> value=<%=nil%> >Select Color:</option>
+
+    <% Cat.all_colors.each do |color| %>
+      <option <%= selected = 'selected' if @cat.color == color%>><%= color %></option>
+    <% end %>
+
+  </select>
+
+  <p>Cat's Birthday</p>
+  <p><input type="date" name = "cat[birth_date]" value="<%= @cat.birth_date %>"/></p>
+
+  <p>Cat's Description</p>
+  <p><textarea rows = "6" cols = "50" name = "cat[description]"><%= @cat.description %></textarea>
+
+  <p><input type="submit" value="Let There Be Cat"/></p>
+</form>
